@@ -36,7 +36,26 @@ The primary objective of this project is to decode how regional demographics int
 ---
 
 ## 📂 Project Structure
-```text
+text
 ├── DVA_A2.ipynb         # Deep Dive Notebook: NLP Embeddings, t-SNE, & Network Modeling
+├── app.py               # Enterprise Streamlit Dashboard Execution Script
 ├── instagram_data.jsonl # Scaled Core Ingestion Dataset (500k Simulated Records)
 └── README.md            # System Executive Summary
+
+---
+#🚀 Installation & Local Deployment
+Clone the personal workspace repository:
+
+Bash
+git clone [https://github.com/pallavi12-code/YOUR-REPO-NAME.git](https://github.com/pallavi12-code/Multilingual Social Media Analytics Engine & Graph Pipeline
+.git)
+cd YOUR-REPO-NAME
+Provision the required environment dependencies:
+
+Bash
+pip install streamlit pandas numpy plotly scikit-learn networkx transformers torch
+Execute the local analytical dashboard server:
+
+
+👥 Core Project Engineering Team
+Marikanti Pallavi Reddy — marikantipallavireddy@gmail.com
