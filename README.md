@@ -1,61 +1,94 @@
-# 📊 Multilingual Social Media Analytics Engine & Graph Pipeline
+# Multilingual Social Media Analytics
 
-## 📌 Project Overview
-This repository features an advanced, end-to-end data analytics and natural language processing pipeline built to analyze large-scale, unstructured social media interactions. Processing a dataset of **500,000 records**, the engine specializes in handling high-frequency regional variations, extraction of linguistic semantic clusters, and structural network mapping of user interactions.
+A Python-based social-media analytics project exploring multilingual text, engagement patterns, hashtags, and follower-network structure across Indian regional languages.
 
-The primary objective of this project is to decode how regional demographics interact across diverse languages by blending Deep Learning NLP architectures, Graph Theory, and High-Dimensional Vector Reduction.
+## Project goal
 
----
+The project demonstrates an analytics workflow for social-media data:
 
-## 🚀 Core Architectural Features
+**Synthetic data generation → preprocessing → exploratory analysis → network analysis → TF-IDF → multilingual BERT inference**
 
-### 1. Multilingual Natural Language Processing
-* **Semantic Analysis:** Implements **Multilingual BERT (mBERT)** via the Hugging Face `transformers` pipeline to calculate cross-lingual contextual sentiments.
-* **Linguistic Representation:** Leverages text vectorization pipelines (`TF-IDF` and tokenization models) engineered to support **9+ regional Indian languages** (including Hindi, Telugu, Marathi, and Tamil), eliminating geographic and script bias in sentiment modeling.
+The dataset is synthetic. This is intentional because the project does not depend on direct Instagram API access.
 
-### 2. High-Dimensional Cluster Reduction
-* **Dimensionality Compression:** Employs **Principal Component Analysis (PCA)** to capture global variance and condense dense embeddings.
-* **Spatial Local Clustering:** Implements **t-Distributed Stochastic Neighbor Embedding (t-SNE)** to optimize local structures, translating 768-dimension transformer tensors into interactive 2D and 3D space maps.
+## Analysis workflow
 
-### 3. Graph Network & Topology Analysis
-* **Network Graph Formulation:** Constructs a massive, relational interaction graph utilizing **NetworkX** where nodes represent users and edges represent multi-point engagements.
-* **Community Detection:** Applies graph-partitioning logic to isolate structural communication clusters and map localized viral echo chambers.
+### 1. Synthetic dataset
 
-### 4. Interactive Enterprise Dashboard
-* Built a sleek, production-grade **Streamlit application** featuring an optimized dark theme.
-* Features advanced sidebar multi-filtering, dynamic geographic/linguistic segment drill-downs, cross-tab visual analytics, and real-time computation of high-level operational KPIs.
+The pipeline generates JSON Lines records containing:
 
----
+- User/profile information
+- Captions and timestamps
+- Likes, comments, and shares
+- Hashtags
+- Follower/following relationships
+- Basic engagement metrics
 
-## 🛠️ System Tech Stack
-* **Core Frameworks:** Python, Pandas, NumPy
-* **Machine Learning & NLP:** Scikit-Learn, PyTorch, Transformers (mBERT)
-* **Graph Network Theory:** NetworkX
-* **Data Visualization & Delivery:** Plotly, Streamlit, Seaborn, Matplotlib
+The current analysis uses a 500,000-record synthetic dataset configuration.
 
----
+### 2. Multilingual preprocessing
 
-## 📂 Project Structure
-text
-├── DVA_A2.ipynb         # Deep Dive Notebook: NLP Embeddings, t-SNE, & Network Modeling
-├── app.py               # Enterprise Streamlit Dashboard Execution Script
-├── instagram_data.jsonl # Scaled Core Ingestion Dataset (500k Simulated Records)
-└── README.md            # System Executive Summary
+The analysis includes text cleaning, URL/mention removal, Indic tokenization where applicable, and language-aware processing for English plus regional Indian languages.
 
----
-#🚀 Installation & Local Deployment
-Clone the personal workspace repository:
+### 3. Exploratory analysis
 
-Bash
-git clone [https://github.com/pallavi12-code/YOUR-REPO-NAME.git](https://github.com/pallavi12-code/Multilingual Social Media Analytics Engine & Graph Pipeline
-.git)
-cd YOUR-REPO-NAME
-Provision the required environment dependencies:
+The project examines:
 
-Bash
-pip install streamlit pandas numpy plotly scikit-learn networkx transformers torch
-Execute the local analytical dashboard server:
+- Language distribution
+- Word frequency
+- Hashtag frequency
+- Engagement distributions
+- Correlations between engagement features
 
+### 4. Network analysis
 
-👥 Core Project Engineering Team
-Marikanti Pallavi Reddy — marikantipallavireddy@gmail.com
+NetworkX is used to build a sample follower graph and inspect node connectivity and degree distributions.
+
+### 5. Text representation
+
+TF-IDF provides a lightweight lexical baseline for caption analysis.
+
+### 6. Multilingual BERT inference
+
+The pipeline demonstrates inference with `bert-base-multilingual-cased` for multilingual sequence classification. The current notebook-style implementation uses an untrained classification head, so its predictions should be treated as a model-integration demonstration rather than a validated sentiment model.
+
+## Repository structure
+
+```text
+.
+├── instagram_analysis.py
+└── README.md
+```
+
+## Run
+
+The repository currently contains the cleaned project entrypoint and documentation. The full exploratory implementation can be modularized further as the project evolves.
+
+```bash
+git clone https://github.com/pallavi12-code/Instagram-Multilingual-Social-Media-Analysis.git
+cd Instagram-Multilingual-Social-Media-Analysis
+python instagram_analysis.py
+```
+
+## Tech stack
+
+- Python
+- Pandas / NumPy
+- Scikit-learn
+- NetworkX
+- PyTorch
+- Hugging Face Transformers
+- Indic NLP
+- Matplotlib / Seaborn / Plotly
+
+## Engineering improvements to pursue
+
+- Split data generation, preprocessing, NLP, and graph analysis into modules
+- Add tests for text cleaning and feature engineering
+- Add a real labeled multilingual sentiment dataset for model evaluation
+- Add configuration instead of hard-coded dataset size and model settings
+- Add reproducible seeds and experiment tracking
+
+## Author
+
+**Pallavi Reddy**  
+Artificial Intelligence & Machine Learning Engineering Student, CBIT
